@@ -1,4 +1,4 @@
-# Ansible Playbook to provision a webserver and print 'hello world' on the front page
+# Simple Ansible playbook to provision a webserver and print 'hello world' on the front page
 # Written as part of my Ansible learning journey
 ---
 - hosts: host1
