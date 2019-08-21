@@ -1,10 +1,21 @@
-# Ansible Playbook to provision a server
+# Ansible Playbook to provision a webserver and print 'hello world' on the front page
 # Written as part of my Ansible learning journey
 ---
-- hosts: all
+- hosts: host1
   become: yes
   tasks:
     - name: install httpd
       package:
         name: httpd
         state: latest
+    - name: add firewall rule for httpd
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+        immediate: yes
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
