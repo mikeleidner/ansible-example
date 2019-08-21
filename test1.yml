@@ -1,0 +1,11 @@
+# This is my attempt to write a playbook from scratch
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: poop
+      lineinfile:
+        create: yes
+        path: /tmp/file.tmp
+        line: "poop"
+        state: present

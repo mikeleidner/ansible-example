@@ -1,0 +1,10 @@
+# Ansible Playbook to provision a server
+# Written as part of my Ansible learning journey
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: install httpd
+      package:
+        name: httpd
+        state: latest
