@@ -19,3 +19,7 @@
         name: httpd
         state: started
         enabled: yes
+    - name: copy homepage
+      copy:
+        src: /home/ansible/ansible-labs/web/index.html
+        dest: /var/www/html/index.html
